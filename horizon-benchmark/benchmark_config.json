@@ -1,0 +1,17 @@
+{
+    "benchmark_name": "Horizon v1",
+    "tasks": [
+        "long_chain_navigation",
+        "multi_step_problem_solving",
+        "resource_management_horizon"
+    ],
+    "metrics": [
+        "success_rate",
+        "plan_efficiency",
+        "reasoning_depth"
+    ],
+    "parameters": {
+        "max_steps": 1000,
+        "difficulty_level": "advanced"
+    }
+}
