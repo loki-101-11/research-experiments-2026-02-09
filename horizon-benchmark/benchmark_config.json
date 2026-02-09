@@ -1,17 +1,40 @@
 {
-    "benchmark_name": "Horizon v1",
-    "tasks": [
-        "long_chain_navigation",
-        "multi_step_problem_solving",
-        "resource_management_horizon"
-    ],
-    "metrics": [
-        "success_rate",
-        "plan_efficiency",
-        "reasoning_depth"
-    ],
-    "parameters": {
-        "max_steps": 1000,
-        "difficulty_level": "advanced"
+  "benchmark_name": "Horizon-Long-Planning-v1",
+  "description": "LLM 에이전트의 장기 계획 및 복잡한 워크플로우 수행 능력을 평가하기 위한 설정 파일",
+  "evaluation_metrics": [
+    {
+      "name": "Success Rate",
+      "description": "최종 목표 상태에 도달했는지 여부"
+    },
+    {
+      "name": "Efficiency Score",
+      "description": "최소 단계 대비 실행한 단계 수의 비율 (Long-horizon 최적화)"
+    },
+    {
+      "name": "Planning Resilience",
+      "description": "중간 실패 발생 시 계획을 동적으로 수정하여 다시 복구하는 능력"
     }
+  ],
+  "scenarios": [
+    {
+      "id": "H-001",
+      "title": "다단계 소프트웨어 마이그레이션",
+      "difficulty": "High",
+      "steps_estimate": 25,
+      "goal": "레거시 코드베이스를 최신 프레임워크로 변환하고 테스트 자동화까지 완료"
+    },
+    {
+      "id": "H-002",
+      "title": "복합 자산 조사 및 리포트 작성",
+      "difficulty": "Medium",
+      "steps_estimate": 15,
+      "goal": "수십 개의 웹사이트와 PDF 파일에서 데이터를 추출하고 교차 검증하여 보고서 생성"
+    }
+  ],
+  "agent_tools_allowed": [
+    "terminal",
+    "web_browser",
+    "file_editor",
+    "python_interpreter"
+  ]
 }
